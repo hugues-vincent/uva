@@ -1,0 +1,18 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": ".+",
+			"name": "cppbuilder",
+			"shell_cmd": "g++ -lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE ${file_path}/main.cpp -o ${file_path}/a.out && ${file_path}/a.out < a.in"
+		}
+	],	
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	]
+}
+
+
