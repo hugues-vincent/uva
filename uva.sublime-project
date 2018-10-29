@@ -5,8 +5,14 @@
 			"file_regex": ".+",
 			"name": "cppbuilder",
 			"shell_cmd": "g++ -lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE ${file_path}/main.cpp -o ${file_path}/a.out && ${file_path}/a.out < a.in"
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
 		}
-	],	
+	],
 	"folders":
 	[
 		{
@@ -14,5 +20,3 @@
 		}
 	]
 }
-
-
