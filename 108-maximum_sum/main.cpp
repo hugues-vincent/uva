@@ -37,7 +37,6 @@ int main()
     for(int start_row = 0 ; start_row < n; start_row++){
         for(int end_row = start_row ; end_row < n ; end_row++){
             for (int col = 0; col < n; col++){
-
                 reduced[col] = start_row == 0 ?
                     cum_sum[start_row][col] :
                     cum_sum[end_row][col] - cum_sum[start_row - 1][col];
