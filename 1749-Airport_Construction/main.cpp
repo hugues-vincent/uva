@@ -1,10 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-#include <string>
-#include <vector>
-#include <random>
-
+#include <algorithm>
 using namespace std;
 
 typedef struct
@@ -13,6 +10,14 @@ typedef struct
 	int y;
 }  point;
 
+typedef struct
+{
+  point p1, p2;
+  int i1, i2;
+  double distance;
+} segment;
+
+bool segment_compare (segment i,segment j) { return (i.distance > j.distance); }
 double distance(point p1, point p2)
 {
 	return sqrt(pow(p1.x - p2.x, 2) 
@@ -20,8 +25,42 @@ double distance(point p1, point p2)
 }
 int main()
 {
-    int stack[1];
-    cout<<"ee" << endl;
+    int n, x, y;
+    point p;
+    segment s;
+    std::vector<point> points;
+    std::vector<segment> segments;
+
+    while (scanf("%d", &n) != EOF) {
+        points.clear();
+        segments.clear();
+        for (int i=0 ; i<n ; i++){
+            if (scanf("%d %d", &x, &y) == 2) {
+                p.x = x;
+                p.y = y;
+                points.push_back(p);
+            }
+        }
+        for (int i = 0; i < points.size(); ++i)
+        {
+            for (int j = i + 1; j < points.size(); ++j)
+            {
+                s.p1 = points[i];
+                s.p2 = points[j];
+                s.i1 = i;
+                s.i2 = j;
+                s.distance = distance(points[i], points[j]);
+                segments.push_back(s);
+            }
+        }
+        sort(segments.begin(), segments.end(), segment_compare);
+        for (int i = 0; i < segments.size(); ++i)
+        {
+            printf("%f\n", segments[i].distance);
+        }
+        printf("%d \n", segments.size());
+        printf("\n");
+    }
     return 0;
 }
 // int main1(int argc, char *argv[]){
