@@ -13,7 +13,7 @@ typedef struct
 typedef struct
 {
   point p1, p2;
-  // int i1, i2;
+  int i1, i2;
   double distance;
 } segment;
 
@@ -28,8 +28,7 @@ bool are_points_equal (const point &i,const point &j) {
 bool segment_compare (segment i,segment j) { return (i.distance > j.distance); }
 double distance(point p1, point p2)
 {
-	return sqrt(pow(p1.x - p2.x, 2) 
-		+ pow(p1.y - p2.y, 2));
+	return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
 }
 
 bool is_segment_inside(const segment seg, std::vector<point> points){
@@ -71,6 +70,15 @@ bool is_segment_inside(const segment seg, std::vector<point> points){
             }
         }
     }
+    if(seg.i1 + 1 != seg.i2){
+        p1 = points[(seg.i1 + 1) % points.size()];
+        p2 = points[(seg.i2 + 1) % points.size()];
+        p1d1 = p1.y - (alpha * p1.x + beta);
+        p2d1 = p2.y - (alpha * p2.x + beta);
+        if(p1d1 * p2d1 > 0){
+            return false;
+        }
+    }
     return true;
 }
 int main()
@@ -99,6 +107,8 @@ int main()
             {
                 s.p1 = points[i];
                 s.p2 = points[j];
+                s.i1 = i;
+                s.i2 = j;
                 s.distance = distance(points[i], points[j]);
                 segments.push_back(s);
                 // printf("%d %d\n", i, j);
@@ -108,22 +118,27 @@ int main()
         for (int i = 0; i < segments.size(); ++i)
         {
             // if (segments[i].p1.x == 40 && segments[i].p1.y == 0){
-            printf("%d ", i);
-            cout << segments[i].p1.x << " " << segments[i].p1.y << " " << segments[i].p2.x << " " << segments[i].p2.y << " ";
-            cout << is_segment_inside(segments[i], points); 
-            cout << " " << segments[i].distance << endl;
+            // if (!bar){
+            // printf("%d ", i);
+            // cout << segments[i].p1.x << " " << segments[i].p1.y << " " << segments[i].p2.x << " " << segments[i].p2.y << " ";
+            // bool bar = is_segment_inside(segments[i], points);
+            // cout << bar; 
+            // cout << " " << segments[i].distance << endl;
             // }
         }
-        // int foo = 2;
+        // int foo = 1;
         // cout << segments[foo].p1.x << " " << segments[foo].p1.y << " " << segments[foo].p2.x << " " << segments[foo].p2.y << " " << "\n\n";
         // cout << is_segment_inside(segments[foo], points) << " " << segments[foo].distance << endl;
-        // int i = 0;
-        // while (!finded && i < segments.size())
-        // {
-        //     finded = is_segment_inside(segments[i], segments);
-        //     i++;
-        // }
-        printf("\n");
+
+
+        int i = 0;
+        finded = false;
+        while (!finded && i < segments.size())
+        {
+            finded = is_segment_inside(segments[i], points);
+            i++;
+        }
+        printf("%f\n", segments[i - 1].distance); 
     }
     return 0;
 }
