@@ -4,6 +4,114 @@
 		"selected_items":
 		[
 			[
+				"is_",
+				"is_vertical1\tbool is_vertical1"
+			],
+			[
+				"is_ve",
+				"is_vertical2\tbool is_vertical2"
+			],
+			[
+				"p2",
+				"p2d1\tdouble p2d1"
+			],
+			[
+				"p1",
+				"p1d1\tdouble p1d1"
+			],
+			[
+				"bet",
+				"beta2\tdouble beta2"
+			],
+			[
+				"alpha",
+				"alpha1\tdouble alpha1"
+			],
+			[
+				"prin",
+				"printf\tprintf …"
+			],
+			[
+				"in",
+				"inside\tbool inside"
+			],
+			[
+				"i",
+				"i2\tint i2"
+			],
+			[
+				"p",
+				"p1\tpoint p1"
+			],
+			[
+				"dis",
+				"distance"
+			],
+			[
+				"max",
+				"max_y\tint max_y"
+			],
+			[
+				"min",
+				"min_x"
+			],
+			[
+				"co",
+				"cout\tostream cout"
+			],
+			[
+				"ln",
+				"lnode\tstd::__detail::_Node_iterator<std::pair<const std::basic_string<char>, node>, false, true> lnode"
+			],
+			[
+				"rno",
+				"rnode_tmp\tstd::__detail::_Node_iterator<std::pair<const std::basic_string<char>, node>, false, true> rnode_tmp"
+			],
+			[
+				"parn",
+				"parent"
+			],
+			[
+				"rn",
+				"rnode_tmp\tstd::__detail::_Node_iterator<std::pair<const std::basic_string<char>, node>, false, true> rnode_tmp"
+			],
+			[
+				"de",
+				"depth\tint depth"
+			],
+			[
+				"righ",
+				"right_node\tnode right_node"
+			],
+			[
+				"lef",
+				"left_node\tnode left_node"
+			],
+			[
+				"rig",
+				"right_name\tchar [31] right_name"
+			],
+			[
+				"ri",
+				"right_name\tchar [31] right_name"
+			],
+			[
+				"f",
+				"first\tconst std::basic_string<char> first"
+			],
+			[
+				"par",
+				"parent\tchar [31] parent"
+			],
+			[
+				"unor",
+				"unordered_map\tstandard header (since c++11)"
+			],
+			[
+				"max_s",
+				"max_so_far\tint max_so_far"
+			],
+			[
 				"end",
 				"end_row"
 			],
@@ -112,23 +220,11 @@
 				"log_spot_path"
 			],
 			[
-				"min",
-				"min"
-			],
-			[
 				"su",
 				"\\sum_{}^{}"
 			],
 			[
 				"rgi",
-				"\\right"
-			],
-			[
-				"righ",
-				"\\right"
-			],
-			[
-				"rig",
 				"\\right"
 			],
 			[
@@ -144,20 +240,12 @@
 				"\\rightarrow"
 			],
 			[
-				"lef",
-				"\\Leftrightarrow"
-			],
-			[
 				"s",
 				"\\subsubsection*{}"
 			],
 			[
 				"secti",
 				"\\section{}"
-			],
-			[
-				"par",
-				"\\part*{}"
 			],
 			[
 				"la",
@@ -214,10 +302,6 @@
 			[
 				"dot",
 				"\\odot"
-			],
-			[
-				"in",
-				"\\infty"
 			],
 			[
 				"mta",
@@ -298,10 +382,6 @@
 			[
 				"point",
 				"point1D"
-			],
-			[
-				"p",
-				"TEMPLATE_CONTEXT_PROCESSORS"
 			],
 			[
 				"il",
@@ -434,130 +514,37 @@
 			[
 				"ac",
 				"acount_user"
-			],
-			[
-				"us",
-				"USER"
-			],
-			[
-				"acc",
-				"account_user"
-			],
-			[
-				"bo",
-				"border-right"
-			],
-			[
-				"cha",
-				"ChangePasswordForm"
-			],
-			[
-				"rg",
-				"rgba()"
-			],
-			[
-				"di",
-				"d-ib+\tdisplay: inline-block;\n*display: inline;\n*zoom: 1;"
-			],
-			[
-				"dis",
-				"display"
-			],
-			[
-				"mag",
-				"margin"
-			],
-			[
-				"bot",
-				"border-top"
-			],
-			[
-				"border",
-				"border-top"
-			],
-			[
-				"ma",
-				"margin"
-			],
-			[
-				"st",
-				"style\tAttr"
-			],
-			[
-				"style",
-				"style\tAttr"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"plate",
-				"plateNumber"
-			],
-			[
-				"per",
-				"permissions_admin"
-			],
-			[
-				"fu",
-				"full_url"
-			],
-			[
-				"fo",
-				"font-size"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"pos",
-				"position"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "108-maximum_sum/main.cpp",
+			"file": "1749-Airport_Construction/main.cpp",
 			"settings":
 			{
-				"buffer_size": 2416,
+				"buffer_size": 4635,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "108-maximum_sum/a.in",
+			"contents": "\n  BRANCH:  On branch `master`.\n  ROOT:    ~/prog/c++/uva\n  HEAD:    8f9cdab 1749 last beta\n\n    Your working directory is clean.\n\n  ###################                   ###############\n  ## SELECTED FILE ##                   ## ALL FILES ##\n  ###################                   ###############\n\n  [o] open file                         [a] stage all unstaged files\n  [s] stage file                        [A] stage all unstaged and untracked files\n  [u] unstage file                      [U] unstage all staged files\n  [d] discard changes to file           [D] discard all unstaged changes\n  [h] open file on remote\n  [M] launch external merge tool\n\n  [l] diff file inline                  [f] diff all files\n  [e] diff file                         [F] diff all cached files\n\n  #############                         #############\n  ## ACTIONS ##                         ## STASHES ##\n  #############                         #############\n\n  [c] commit                            [t][a] apply stash\n  [C] commit, including unstaged        [t][p] pop stash\n  [m] amend previous commit             [t][s] show stash\n  [p] push current branch               [t][c] create stash\n                                        [t][u] create stash including untracked files\n  [i] ignore file                       [t][g] create stash of staged changes only\n  [I] ignore pattern                    [t][d] drop stash\n\n  [B] abort merge\n\n  ###########\n  ## OTHER ##\n  ###########\n\n  [r]         refresh status\n  [?]         toggle this help menu\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [.]         move cursor to next file\n  [,]         move cursor to previous file\n\n-\n\n",
+			"settings":
+			{
+				"buffer_size": 1708,
+				"line_ending": "Unix",
+				"name": "STATUS: uva",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "1749-Airport_Construction/a.in",
 			"settings":
 			{
 				"buffer_size": 41,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#include <iostream>\n#include <stdio.h>\n\nusing namespace std;\n\nint max_subarray(int A[101]){\n    int curr_sum = 0, best_sum = 0;\n    int i = 0, k = 0;\n    while (i + k < 101){\n        curr_sum = curr_sum + A[i + k];\n        if (curr_sum > best_sum){\n            best_sum = curr_sum;\n        }\n        if (curr_sum < 0){\n            i = i + k + 1;\n            k = 0;\n            curr_sum = 0;\n        }\n        else {\n            k++;\n        }\n    }\n    return best_sum;\n}\nint main()\n{\n    int n, A[101][101];\n\n    if(scanf(\"%d\", &n)==1){}\n    for(int i = 0 ; i<n ; i++){\n        for(int j = 0 ; j<n ; j++){\n            if(scanf(\"%d\", &A[i][j]) == 1){};\n        }\n    }\n\n    int cum_sum[101][101];\n    for(int col = 0 ; col<n ; col++){\n        cum_sum[0][col] = A[0][col];\n        for(int row = 1 ; row<n ; row++){\n            cum_sum[row][col] = A[row][col] + cum_sum[row - 1][col];\n        }\n    }\n    int best_sum = 0, curr_sum = 0, reduced[101], sum = 0;\n\n    for(int start_row = 0 ; start_row < n; start_row++){\n        for(int end_row = start_row ; end_row < n ; end_row++){\n            for (int col = 0; col < n; col++){\n\n                reduced[col] = start_row = 0 ?\n                    cum_sum[start_row][col] :\n                    cum_sum[end_row][col] - cum_sum[start_row - 1][col];\n            }\n            cout << start_row << \" | \" << end_row << endl; \n            for (int a = 0; a < n; a++) cout << reduced[a] << \" \";\n                cout << endl;\n                cout << endl;\n            curr_sum = max_subarray(reduced);\n            if(curr_sum > best_sum)\n                best_sum = curr_sum;\n        }\n    }\n    cout << best_sum << endl;\n    return 0;\n}\n// int sum(int i0, int j0, int ni, int nj, int A[101][101]){\n//     int sum = 0;\n//     for(int i = 0 ; i<ni ; i++){\n//         for(int j = 0 ; j<nj ; j++){\n//             if(i + i0 < 101 && j + j0 < 101){\n//                 sum += A[i + i0][j + j0];\n//             }\n//         }\n//     }\n//     return sum;\n// }\n    // for(int ni = 1 ; ni<=n ; ni++){\n    //     for(int nj = 1 ; nj<=n ; nj++){\n    //         for(int i = 0 ; i < n - ni + 1; i++){\n    //             for(int j = 0 ; j < n - nj + 1 ; j++){\n    //                 curr_sum = sum(i, j, ni, nj, A);\n    //                 if(curr_sum > best_sum)\n    //                     best_sum = curr_sum;\n    //             }\n    //         }\n    //     }\n    // }\n",
-			"settings":
-			{
-				"buffer_size": 2394,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "def max_subarray_opti(a):\n    n = len(a)\n    cur_sum, best_sum = 0, 0\n    i, k = 0, 0\n    while i + k < n:\n        cur_sum = cur_sum + a[i + k]\n        if cur_sum > best_sum:\n            best_sum = cur_sum\n        if cur_sum < 0:\n            i, k = i + k + 1, 0\n            cur_sum = 0\n        else:\n            k = k + 1\n    return best_sum\n\n    ",
-			"settings":
-			{
-				"buffer_size": 347,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "uva.sublime-project",
-			"settings":
-			{
-				"buffer_size": 447,
 				"line_ending": "Unix"
 			}
 		}
@@ -630,6 +617,14 @@
 				"git: status"
 			],
 			[
+				"sta",
+				"git: status"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
 				"python",
 				"Set Syntax: Python"
 			],
@@ -672,10 +667,6 @@
 			[
 				"pro",
 				"Project: Save As"
-			],
-			[
-				"sta",
-				"git: status"
 			],
 			[
 				"cop",
@@ -1132,10 +1123,6 @@
 			[
 				"odd",
 				"Oddly: Split into 'oddly' lines"
-			],
-			[
-				"package is",
-				"Package Control: List Packages"
 			]
 		],
 		"width": 546.0
@@ -1166,13 +1153,20 @@
 	[
 		"/home/huguesvincent/prog/c++/uva",
 		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem",
-		"/home/huguesvincent/prog/c++/uva/102-Ecological_Bin_Packing",
-		"/home/huguesvincent/prog/c++/uva/108-maximum_sum",
-		"/home/huguesvincent/prog/c++/uva/1099-Sharing_Chocolate",
 		"/home/huguesvincent/prog/c++/uva/1749-Airport_Construction"
 	],
 	"file_history":
 	[
+		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem/main.cpp",
+		"/home/huguesvincent/prog/c++/uva/1749-Airport_Construction/main.cpp",
+		"/home/huguesvincent/prog/c++/uva/177-paper_folding/main.cpp",
+		"/home/huguesvincent/prog/c++/uva/177-paper_folding/a.in",
+		"/home/huguesvincent/prog/c++/uva/1749-Airport_Construction/a.out",
+		"/home/huguesvincent/prog/c++/uva/108-maximum_sum/main.cpp",
+		"/home/huguesvincent/prog/c++/uva/115-climbing_trees/main.cpp",
+		"/home/huguesvincent/prog/c++/uva/108-maximum_sum/a.in",
+		"/home/huguesvincent/prog/c++/uva/115-climbing_trees/a.in",
+		"/home/huguesvincent/prog/c++/uva/uva.sublime-project",
 		"/home/huguesvincent/prog/c++/uva/108-maximum_sum/",
 		"/home/huguesvincent/prog/c++/uva/102-Ecological_Bin_Packing/main.cpp",
 		"/home/huguesvincent/prog/c++/uva/utils.h",
@@ -1180,9 +1174,7 @@
 		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem/a.cpp",
 		"/home/huguesvincent/prog/c++/uva/1099-Sharing_Chocolate/main.cpp",
 		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem/cache",
-		"/home/huguesvincent/prog/c++/uva/uva.sublime-project",
 		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem/a.in",
-		"/home/huguesvincent/prog/c++/uva/100-The_3n_+_1_problem/main.cpp",
 		"/home/huguesvincent/prog/c++/uva/1099-Sharing_Chocolate/p1099.pdf",
 		"/home/huguesvincent/prog/c++/uva/uva.sublime-workspace",
 		"/home/huguesvincent/prog/c++/uva/.gitignore",
@@ -1190,7 +1182,6 @@
 		"/home/huguesvincent/prog/c++/uva/1749-Airport_Construction/a.in",
 		"/home/huguesvincent/prog/c++/uva/102-Ecological_Bin_Packing/a.out",
 		"/home/huguesvincent/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/home/huguesvincent/prog/c++/uva/1749-Airport_Construction/main.cpp",
 		"/home/huguesvincent/Documents/cours/m2_finance/cpp/code/headers/HestonBroadieKayaTG.h",
 		"/home/huguesvincent/Documents/cours/m2_finance/cpp/code/headers/HestonBroadieKayaQE.h",
 		"/home/huguesvincent/Documents/cours/m2_finance/cpp/code/headers/HestonEuler.h",
@@ -1293,14 +1284,7 @@
 		"/home/huguesvincent/prog/bash/mklatex/mklatex.sh",
 		"/Data/backup/install.sh",
 		"/home/huguesvincent/Android/Sdk/tools/bin/avdmanager",
-		"/home/huguesvincent/prog/android/ReactCalculator/android/app/build.gradle",
-		"/home/huguesvincent/AwesomeProject/android/app/build.gradle",
-		"/home/huguesvincent/AwesomeProject/android/app/local.properties",
-		"/tmp/packages.json",
-		"/tmp/key_bindings.json",
-		"/home/huguesvincent/.config/sublime-text-3/Packages/User/Package Control.last-run",
-		"/home/huguesvincent/.config/sublime-text-3/Packages/User/Package Control.user-ca-bundle",
-		"/home/huguesvincent/.config/sublime-text-3/Installed Packages/PyV8/linux64-p3/config.json"
+		"/home/huguesvincent/prog/android/ReactCalculator/android/app/build.gradle"
 	],
 	"find":
 	{
@@ -1318,6 +1302,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"segment_compare",
+			"f",
+			"printf",
+			"(double)",
+			"%f",
+			"f",
+			"p1",
+			"alpha2",
+			"beta2",
+			"alpha2",
+			"seg.",
+			"x",
+			"p1",
+			"point",
+			"%d",
+			"d",
+			"[0]",
+			"points_are_equal",
+			"segs",
+			"curr_seg",
+			"points_equal",
+			"does_points_are_equal",
+			"segment",
+			"segs",
+			"p1",
+			"[i]",
+			"i",
+			"[i]",
+			"i",
+			"seg.p2",
+			"segment",
+			"x",
+			"max_y",
+			"nb_fold",
+			"build",
+			"n",
+			"rnode_tmp",
+			"_it",
+			"lnode_it",
+			"rnode_it",
+			"r_it",
+			"right_it",
+			"left_it",
+			"second",
+			"parent_node",
+			"child(",
 			"co",
 			"col",
 			"row",
@@ -1375,19 +1405,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "108-maximum_sum/main.cpp",
+					"file": "1749-Airport_Construction/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2416,
+						"buffer_size": 4635,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1635,
-								1635
+								2775,
+								2775
 							]
 						],
 						"settings":
@@ -1395,23 +1425,19 @@
 							"SL.14.region_keys":
 							[
 							],
-							"SL.22.region_keys":
+							"SL.50.region_keys":
 							[
 							],
-							"SL.32.region_keys":
-							[
-							],
-							"_anf_new": "",
 							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone": 14,
 							"bracket_highlighter.clone_locations":
 							{
 								"close":
 								{
 									"1":
 									[
-										897,
-										898
+										4617,
+										4618
 									]
 								},
 								"icon":
@@ -1426,8 +1452,8 @@
 								{
 									"1":
 									[
-										733,
-										734
+										2928,
+										2929
 									]
 								},
 								"unmatched":
@@ -1436,87 +1462,72 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"bracket_highlighter.locations":
 							{
 								"close":
 								{
-									"1":
-									[
-										917,
-										918
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										910,
-										911
-									]
 								},
 								"unmatched":
 								{
@@ -1524,61 +1535,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"git_gutter_is_enabled": true,
 							"git_savvy.repo_path": "/home/huguesvincent/prog/c++/uva",
@@ -1587,21 +1598,205 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1068.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"default_dir": "/home/huguesvincent/prog/c++/uva/1749-Airport_Construction",
+							"git_gutter_is_enabled": false,
+							"git_savvy.help_hidden": false,
+							"git_savvy.interface": "status",
+							"git_savvy.repo_path": "/home/huguesvincent/prog/c++/uva",
+							"git_savvy.status_view": true,
+							"git_savvy.tabbable": true,
+							"syntax": "Packages/GitSavvy/syntax/status.sublime-syntax",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "108-maximum_sum/a.in",
+					"buffer": 2,
+					"file": "1749-Airport_Construction/a.in",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1618,7 +1813,12 @@
 						],
 						"settings":
 						{
-							"_anf_new": "",
+							"SL.15.region_keys":
+							[
+							],
+							"SL.16.region_keys":
+							[
+							],
 							"bracket_highlighter.busy": false,
 							"bracket_highlighter.clone": -1,
 							"bracket_highlighter.clone_locations":
@@ -1638,61 +1838,61 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
+								"bh_unmatched_content"
 							],
 							"bracket_highlighter.locations":
 							{
@@ -1711,61 +1911,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
+								"bh_unmatched_content"
 							],
 							"git_gutter_is_enabled": true,
 							"git_savvy.repo_path": "/home/huguesvincent/prog/c++/uva",
@@ -1775,559 +1975,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2394,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2394,
-								2394
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": 19,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"default_dir": "/home/huguesvincent/prog/c++/uva/108-maximum_sum",
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 260.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								347,
-								347
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"default_dir": "/home/huguesvincent/prog/c++/uva/108-maximum_sum",
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "uva.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								272,
-								272
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										281,
-										282
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										244,
-										245
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"git_gutter_is_enabled": true,
-							"git_savvy.repo_path": "/home/huguesvincent/prog/c++/uva",
-							"syntax": "Packages/Babel/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -2385,7 +2033,7 @@
 	},
 	"output.exec":
 	{
-		"height": 279.0
+		"height": 363.0
 	},
 	"output.find_results":
 	{
@@ -2416,6 +2064,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"stat",
+				"STATUS: uva"
+			],
 			[
 				"subli",
 				"uva.sublime-project"
@@ -2923,10 +2575,6 @@
 			[
 				"viw",
 				"accounts/views.py"
-			],
-			[
-				"form",
-				"crm/forms.py"
 			]
 		],
 		"width": 0.0

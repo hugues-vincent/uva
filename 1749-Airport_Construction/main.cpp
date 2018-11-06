@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip> 
 #include <math.h>
 #include <vector>
 #include <algorithm>
@@ -22,9 +23,6 @@ void swap(point &p1, point &p2) {
     p1 = p2;
     p2 = tmp;
 }
-bool are_points_equal (const point &i,const point &j) { 
-    return (i.x == j.x && i.y == j.y); 
-}
 bool segment_compare (segment i,segment j) { return (i.distance > j.distance); }
 double distance(point p1, point p2)
 {
@@ -37,18 +35,20 @@ bool is_segment_inside(const segment seg, std::vector<point> points){
     double dx1, dx2;
     int nb_points = points.size();
     point p1, p2, sp1, sp2;
+    bool is_vertical1, is_vertical2, is_vertical3; 
 
-    alpha = (seg.p1.x - seg.p2.x) == 0 ? 3*pow(10, 6) : (double)(seg.p1.y - seg.p2.y) / (seg.p1.x - seg.p2.x);
+    is_vertical1 = ((seg.p1.x - seg.p2.x) == 0);
+    alpha = is_vertical1 ? 0 : (double)(seg.p1.y - seg.p2.y) / (seg.p1.x - seg.p2.x);
     beta = seg.p1.y - alpha * seg.p1.x;
     for (int i = 0; i < nb_points; ++i)
     {
         p1 = points[i];
         p2 = points[(i + 1) % nb_points];
-        if(!are_points_equal(p1, seg.p1) && !are_points_equal(p2, seg.p2)) {
-            p1d1 = p1.y - (alpha * p1.x + beta);
-            p2d1 = p2.y - (alpha * p2.x + beta);
+        if(i != seg.i1 && ((i + 1) % nb_points) != seg.i2) {
+            p1d1 = is_vertical1 ? p1.x - seg.p1.x : p1.y - (alpha * p1.x + beta);
+            p2d1 = is_vertical1 ? p2.x - seg.p1.x : p2.y - (alpha * p2.x + beta);
             if(p1d1 * p2d1 < 0){
-                if (p2d1 < 0) 
+                if (p2d1 < 0)
                     swap(p1, p2);
 
                 dx1 = p1.x - seg.p1.x;
@@ -56,11 +56,13 @@ bool is_segment_inside(const segment seg, std::vector<point> points){
                 sp1 = abs(dx1) < abs(dx2) ? seg.p1 : seg.p2; 
                 sp2 = abs(dx1) < abs(dx2) ? seg.p2 : seg.p1; 
 
-                alpha1 = (sp1.x - p1.x) == 0 ? 3*pow(10, 6) : (double)(sp1.y - p1.y) / (sp1.x - p1.x);
+                is_vertical2 = ((sp1.x - p1.x) == 0);
+                alpha1 = is_vertical2 ? p2.x - p1.x : (double)(sp1.y - p1.y) / (sp1.x - p1.x);
                 beta1 = p1.y - alpha1 * p1.x;
                 p2d2 = p2.y - (alpha1 * p2.x + beta1);
 
-                alpha1 = (sp2.x - p1.x) == 0 ? 3*pow(10, 6) : (double)(sp2.y - p1.y) / (sp2.x - p1.x);
+                is_vertical3 = ((sp2.x - p1.x) == 0);
+                alpha1 = is_vertical3 ? p2.x - p1.x : (double)(sp2.y - p1.y) / (sp2.x - p1.x);
                 beta1 = p1.y - alpha1 * p1.x;
                 p2d3 = p2.y - (alpha1 * p2.x + beta1);
         
@@ -73,8 +75,8 @@ bool is_segment_inside(const segment seg, std::vector<point> points){
     if(seg.i1 + 1 != seg.i2){
         p1 = points[(seg.i1 + 1) % points.size()];
         p2 = points[(seg.i2 + 1) % points.size()];
-        p1d1 = p1.y - (alpha * p1.x + beta);
-        p2d1 = p2.y - (alpha * p2.x + beta);
+        p1d1 = is_vertical1 ? p1.x - seg.p1.x : p1.y - (alpha * p1.x + beta);
+        p2d1 = is_vertical1 ? p2.x - seg.p1.x : p2.y - (alpha * p2.x + beta);
         if(p1d1 * p2d1 > 0){
             return false;
         }
@@ -89,7 +91,6 @@ int main()
     bool finded;
     std::vector<point> points;
     std::vector<segment> segments;
-
     while (scanf("%d", &n) != EOF) {
         finded = false;
         points.clear();
@@ -115,21 +116,13 @@ int main()
             }
         }
         sort(segments.begin(), segments.end(), segment_compare);
-        for (int i = 0; i < segments.size(); ++i)
-        {
-            // if (segments[i].p1.x == 40 && segments[i].p1.y == 0){
-            // if (!bar){
-            // printf("%d ", i);
-            // cout << segments[i].p1.x << " " << segments[i].p1.y << " " << segments[i].p2.x << " " << segments[i].p2.y << " ";
-            // bool bar = is_segment_inside(segments[i], points);
-            // cout << bar; 
-            // cout << " " << segments[i].distance << endl;
-            // }
-        }
-        // int foo = 1;
-        // cout << segments[foo].p1.x << " " << segments[foo].p1.y << " " << segments[foo].p2.x << " " << segments[foo].p2.y << " " << "\n\n";
-        // cout << is_segment_inside(segments[foo], points) << " " << segments[foo].distance << endl;
-
+        // printf("%d\n", segments.size() );
+        // for (int i = 0; i < segments.size(); ++i)
+        // {
+        //     // cout << segments[i].p1.y << " " << endl;
+        //     // printf("%d %d %d %d %d\n", segments[i].p1.x, segments[i].p1.y, segments[i].p2.x, segments[i].p2.y, is_segment_inside(segments[i], points));
+        //     printf("%d %d %d %d %d\n", segments[i].p1.x, segments[i].p1.y, segments[i].p2.x, segments[i].p2.y, is_segment_inside(segments[i], points));
+        // }
 
         int i = 0;
         finded = false;
@@ -138,7 +131,9 @@ int main()
             finded = is_segment_inside(segments[i], points);
             i++;
         }
-        printf("%f\n", segments[i - 1].distance); 
+        std::cout.precision(9);
+        std::cout.setf( std::ios::fixed, std:: ios::floatfield );
+        cout << segments[i - 1].distance << endl;
     }
     return 0;
 }
