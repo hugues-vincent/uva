@@ -40,51 +40,78 @@ void update_inf_or_supp_point(const point cp, const point p1, const point p2, co
     }
 }
 
-void get_intersection_vector(const point &p1, const point &cp1,const bool &is_vertical_c, const bool &is_vertical, const double &alpha_c, const double &alpha, const double &beta_c, const double &beta , double &x, double &y){
-    x = NAN;
-    y = NAN;
-    if (is_vertical){
-        x = p1.x;
-        y = alpha_c * x + beta_c;
-    }
-    else if (is_vertical_c){
-        x = cp1.x;
-        y = alpha * x + beta;
-    }
-    else if ((alpha_c - alpha) != 0) {
-        x = (beta - beta_c) / (alpha_c - alpha);
-        y = (alpha_c * beta - alpha * beta_c) / (alpha_c - alpha);
-    }
+void get_intersection_vector(const point &p, const point &cp,const bool &is_vertical_c, const bool &is_vertical, const double &alpha_c, const double &alpha, const double &beta_c, const double &beta , double &x, double &y){
+
 }
 std::vector<bool> find_polygon_orientation(const std::vector<point> points){
     std::vector<bool> orientation;
-    point p1 = points[0],
-        p2 = points[1],
+    point p1 = points[0], p2 = points[1],
         p_mid = {0.5 * (p1.x  + p2.x), 0.5 * (p1.y  + p2.y)};
     bool is_vertical;
-    double alpha = -(p1.y - p2.y) / (p1.x - p2.x),
-        beta = p_mid.y - alpha * p_mid.x;
+    double alpha, beta;
+    is_vertical = ((p1.x - p2.x) == 0);
+    alpha = is_vertical ? 0 : (double)(p1.y - p2.y) / (p1.x - p2.x);
+    beta = p_mid.y - alpha * p_mid.x;
 
     point cp1, cp2;
     double alpha_c, beta_c, theta_c, x, y;
     bool is_vertical_c;
-
+    int cpt_left = 0, cpt_right = 0;
 
     for (int i = 1; i < points.size(); ++i)
     {
-        cp1 = points[i];
+        cp1 = points[(i) % points.size()];
         cp2 = points[(i + 1) % points.size()];
 
         is_vertical_c = ((cp1.x - cp2.x) == 0);
         alpha_c = is_vertical_c ? 0 : (double)(cp1.y - cp2.y) / (cp1.x - cp2.x);
         beta_c = cp1.y - alpha_c * cp1.x;
         
-        get_intersection_vector(p1, cp1, is_vertical_c, is_vertical, alpha_c, alpha, beta_c, beta, x, y);
+        double alpha_t = (alpha == 2.544) || (alpha_c == 2544) ? 2.144 : 2.544,
+            beta_t = p_mid.y - alpha_t * p_mid.x;
         
-        if (!isnan(x)){
-            theta_c = (x - cp1.x) / (cp2.x - cp1.x);
-
+        x = NAN;
+        y = NAN;
+        if (is_vertical_c){
+            x = cp1.x;
+            y = alpha_t * x + beta_t;
         }
+        else if ((alpha_c - alpha_t) != 0) {
+            x = (beta_t - beta_c) / (alpha_c - alpha_t);
+            y = (alpha_c * beta_t - alpha_t * beta_c) / (alpha_c - alpha_t);
+        }
+
+        if (!isnan(x)){
+            theta_c = is_vertical_c ? (y - cp1.y) / (cp2.y - cp1.y) : (x - cp1.x) / (cp2.x - cp1.x);
+            if (theta_c >= 0 && theta_c <= 1){
+                if (((x + y) < (p_mid.x + p_mid.y)))
+                    cpt_left++;
+                else 
+                    cpt_right++;
+            }
+        }
+    }
+    if (cpt_right % 2 == 1)
+        orientation.push_back(true);
+    else 
+        orientation.push_back(false);
+    
+    double pd;
+    for (int i = 1; i < points.size(); ++i)
+    {
+        cp1 = points[(i + 1) % points.size()];
+        pd = is_vertical ? cp1.x - p1.x : cp1.y - (-alpha * cp1.x + beta);
+
+        if ((orientation[i-1] == false && pd < 0) || (orientation[i-1] == false && pd > 0))
+            orientation.push_back(1);
+        else
+            orientation.push_back(0);
+    }
+
+    printf("%ld\n", orientation.size());
+    for (int i = 0; i < orientation.size(); ++i)
+    {
+        cout << orientation[i] << " ";
     }
     return orientation;
 }
@@ -118,7 +145,21 @@ double prolong_and_find_longest_segment(const int i1, const int i2, const std::v
         is_vertical_c = ((cp1.x - cp2.x) == 0);
         alpha_c = is_vertical_c ? 0 : (double)(cp1.y - cp2.y) / (cp1.x - cp2.x);
         beta_c = cp1.y - alpha_c * cp1.x;
-        get_intersection_vector(p1, cp1, is_vertical_c, is_vertical, alpha_c, alpha, beta_c, beta, x, y);
+       
+        x = NAN;
+        y = NAN;
+        if (is_vertical){
+            x = p1.x;
+            y = alpha_c * x + beta_c;
+        }
+        else if (is_vertical_c){
+            x = cp1.x;
+            y = alpha * x + beta;
+        }
+        else if ((alpha_c - alpha) != 0) {
+            x = (beta - beta_c) / (alpha_c - alpha);
+            y = (alpha_c * beta - alpha * beta_c) / (alpha_c - alpha);
+        }
 
         if (!isnan(x)){
             theta = (x - p1.x) / (p2.x - p1.x);
@@ -191,12 +232,14 @@ int main()
                 points.push_back({x, y});
             }
         }
+    
+        find_polygon_orientation(points);
 
-        prolong_and_find_longest_segment(4, 5, points);
-        printf("\n");
-        prolong_and_find_longest_segment(2, 3, points);
-        printf("\n");
-        prolong_and_find_longest_segment(1, 2, points);
+        // prolong_and_find_longest_segment(4, 5, points);
+        // printf("\n");
+        // prolong_and_find_longest_segment(2, 3, points);
+        // printf("\n");
+        // prolong_and_find_longest_segment(1, 2, points);
         
         // for (int i = 0; i < points.size(); ++i)
         // {
