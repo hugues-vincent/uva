@@ -6,6 +6,15 @@
 
 using namespace std;
 
+bool almost_equal(double x, double y, int ulp)
+{
+    // the machine epsilon has to be scaled to the magnitude of the values used
+    // and multiplied by the desired precision in ULPs (units in the last place)
+    return std::abs(x-y) <= std::numeric_limits<double>::epsilon() * std::abs(x+y) * ulp
+    // unless the result is subnormal
+           || std::abs(x-y) < std::numeric_limits<double>::min();
+}
+
 typedef struct
 {
 	double x;
@@ -14,37 +23,15 @@ typedef struct
 
 point operator+(const point p1, const point p2) { return {p1.x + p2.x, p1.y + p2.y}; }
 point operator-(const point p1, const point p2) { return {p1.x - p2.x, p1.y - p2.y}; }
-double distance(point p1, point p2)
-{
-	return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
-}
+double distance(point p1, point p2) { return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2)); }
 double angle(point p1, point p2) {
     double dot = p1.x*p2.x + p1.y*p2.y;
     double det = p1.x*p2.y - p1.y*p2.x;
     return std::fmod(atan2(det, dot) + 2 * M_PI, 2*M_PI);
 }
-double max(const double a, const double b) {
-    return a > b ? a : b;
-}
-double min(const double a, const double b) {
-    return a < b ? a : b;
-}
-
-void swap(point &p1, point &p2) {
-    point tmp = p1;
-    p1 = p2;
-    p2 = tmp;
-}
-
-void update_inf_or_supp_point(const point cp, const point p1, const point p2, const double alpha, point &p_inf, point &p_sup){
-    double cp_pos = (cp.x + alpha * cp.y);
-    if(cp_pos >= (p2.x + alpha * p2.y) && cp_pos < (p_sup.x + alpha * p_sup.y)){
-        p_sup = cp;
-    }
-    else if (cp_pos <= (p1.x + alpha * p1.y) && cp_pos > (p_inf.x + alpha * p_inf.y)){
-        p_inf = cp;
-    }
-}
+double max(const double a, const double b) { return a > b ? a : b; }
+double min(const double a, const double b) { return a < b ? a : b; }
+void swap(point &p1, point &p2) { point tmp = p1; p1 = p2; p2 = tmp; }
 
 // can be improved from O(n^2) into O(n), by propagate the orientation of the first 
 // segment to the n-1 remaining segment
@@ -81,7 +68,7 @@ std::vector<int> find_polygon_orientation(const std::vector<point> points){
                 x = cp1.x;
                 y = alpha_t * x + beta_t;
             }
-            else if ((alpha_c - alpha_t) != 0) {
+            else if (!almost_equal(alpha_c - alpha_t, 0, 2)) {
                 x = (beta_t - beta_c) / (alpha_c - alpha_t);
                 y = (alpha_c * beta_t - alpha_t * beta_c) / (alpha_c - alpha_t);
             }
@@ -103,7 +90,22 @@ std::vector<int> find_polygon_orientation(const std::vector<point> points){
     }
     return orientation;
 }
-double prolonged_segment_distance(const int i1, const int i2, const std::vector<point> points, const std::vector<int> orientations) {
+
+void update_inf_or_supp_point(const point cp, const point p1, const point p2, const bool is_vertical, point &p_inf, point &p_sup){
+    // printf("modified ");
+    if ((!is_vertical && cp.x >= p2.x && cp.x < p_sup.x) ||
+        (is_vertical && cp.y >= p2.y && cp.y < p_sup.y)){
+        // printf("p_sup ");
+        p_sup = cp;
+    }
+    else if ((!is_vertical && cp.x > p_inf.x && cp.x <= p1.x) ||
+        (is_vertical && cp.y > p_inf.y && cp.y <= p1.y)){
+        // printf("p_inf");
+        p_inf = cp;
+    }
+}
+double prolonged_segment_distance(const int i1, const int i2, const std::vector<point> points, const std::vector<int> &orientations) {
+    // printf("%d %d: \n", i1, i2);
     point p1 = points[i1], p2 = points[i2], p_inf, p_sup;
 
     // get alpha & beta of the current line
@@ -117,11 +119,10 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
     
     // if the segment is outside 
     if ((abs(i1 - i2) + 1 != points.size()) && ((angle(points[i1 == 0 ? points.size() - 1 : i1-1] - p1, p2 - p1) - angle(points[i1 == 0 ? points.size() - 1 : i1-1] - p1, points[(i1 + 1) % points.size()] - p1)) < 0)){
+        // printf("- outside ");
         return 0;
     }
 
-    if ((p2.x + p2.y * alpha) < (p1.x + p1.y * alpha))
-        swap(p1, p2);
     // get intersection points between the current line and the polygon
     point cp1, cp2;
     std::vector<point> colinear_intersections;
@@ -129,6 +130,8 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
     bool is_vertical_c;
 
     // printf(" %d %d\n", i1, i2);
+    if ((!is_vertical && p2.x < p1.x) || (is_vertical && p2.y < p1.y))
+        swap(p1, p2);
     for (int i = 0; i < points.size(); ++i)
     {
         cp1 = points[i];
@@ -149,93 +152,84 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
             x = cp1.x;
             y = alpha * x + beta;
         }
-        else if ((alpha_c - alpha) != 0) {
+        else if (almost_equal(alpha_c - alpha, 0, 2)) {
             x = (beta - beta_c) / (alpha_c - alpha);
             y = (alpha_c * beta - alpha * beta_c) / (alpha_c - alpha);
         }
 
+        // printf("- %d %d : ", i, i+1);
         if (!isnan(x)){
-            theta = (x - p1.x) / (p2.x - p1.x);
-            theta_c = (x - cp1.x) / (cp2.x - cp1.x);
-            // printf("x:%f y:%f\n", x, y);
-            
-            // normal cases
-            if (theta_c > 0 && theta_c < 1) {
-                // in semgent [p1, p2]
-                if (theta > 0 && theta < 1) 
-                    return 0;
-                // out semgent [p1, p2]  
-                else 
-                    update_inf_or_supp_point({x, y}, p1, p2, alpha, p_inf, p_sup);
-            }
+            theta = is_vertical ? (y - p1.y) / (p2.y - p1.y) : (x - p1.x) / (p2.x - p1.x);
+            theta_c = is_vertical_c ? (y - cp1.y) / (cp2.y - cp1.y)  : (x - cp1.x) / (cp2.x - cp1.x);
+
             // limit cases
-            else if (theta_c == theta_c*theta_c){
-                int k = (x == cp1.x && y == cp1.y) ? i : (i + 1) % points.size(),
+            if (almost_equal(theta_c, 1, 2) || almost_equal(theta_c, 0, 2)){
+                int k = (almost_equal(x, cp1.x, 2) && almost_equal(y, cp1.y, 2)) ? i : (i + 1) % points.size(),
                     bk = k == 0 ? points.size() - 1 : k - 1, ak = (k + 1) % points.size();
                 point bp = points[bk], ap = points[ak];
 
                 double bpd = is_vertical ? bp.x - p1.x : bp.y - (alpha * bp.x + beta);
                 double apd = is_vertical ? ap.x - p1.x : ap.y - (alpha * ap.x + beta);
                 if (bpd * apd < 0){
-                    if(theta > 0 && theta < 1) 
-                        return 0;
+                    // printf("limit 2 sided ");
+                    if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
+                        update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
                     else 
-                        update_inf_or_supp_point({x, y}, p1, p2, alpha, p_inf, p_sup);
+                        return 0;
                 }
-                else if (bpd * apd == 0) {
-                    double orientation = bpd == 0 ? 
+                else if (bpd * apd > 0){
+                    // printf("limit 1 sided ");
+                }
+                else if (almost_equal(bpd * apd, 0, 2)) {
+                    // printf("limit colinear ");
+                    double orientation = almost_equal(bpd, 0, 2) ? 
                         orientations[bk] * apd: 
                         orientations[k] * bpd;
                     if (orientation > 0) {
-                        if(theta > 0 && theta < 1) 
+                        if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
+                            update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
+                        else 
                             return 0;
-                        else
-                            update_inf_or_supp_point({x, y}, p1, p2, alpha, p_inf, p_sup);
                     }
                 }
-             }
+            }
+            // normal cases
+            else if (theta_c > 0 && theta_c < 1) {
+                // printf("normal ");
+                if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
+                    update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
+                else 
+                    return 0;
+            }
+            // else printf("no intersection ");
         }
+        // printf("\n");
     }
-    // sort(intersections.begin(), intersections.end(), [p1](point a, point b){return ((a.x + a.y) < (b.x + b.y));});
-    // for (int i = 0; i < intersections.size(); ++i)
-    // {
-    //     printf("%f %f\n", intersections[i].x, intersections[i].y);
-    // }
-
-    if (p_inf.x == INFINITY) p_inf = p1;
-    if (p_sup.x == -INFINITY) p_sup = p2;
+    if (isinf(p_inf.x)) p_inf = p1;
+    if (isinf(p_sup.x)) p_sup = p2;
+    // printf("min x: %f min y: %f max x: %f max y; %f\n", p_inf.x, p_inf.y, p_sup.x, p_sup.y);
+    // printf("%f\n", distance(p_inf, p_sup));
     return distance(p_inf, p_sup);
 }
 int main()
 {
     int n;
-    bool finded;
     std::vector<point> points;
     std::vector<int> orientation;
     double longest_distance = 0, x, y;
+
     std::cout.precision(9);
     std::cout.setf(std::ios::fixed, std:: ios::floatfield);
-
     while (scanf("%d", &n) != EOF) {
-        finded = false;
+        longest_distance = 0;
         points.clear();
+        orientation.clear();
         for (int i=0 ; i<n ; i++){
             if (scanf("%lf %lf", &x, &y) == 2) {
                 points.push_back({x, y});
             }
         }
         orientation = find_polygon_orientation(points);
-
-        // prolonged_segment_distance(0, 1, points, orientation);
-        // prolonged_segment_distance(1, 2, points, orientation);
-        // prolonged_segment_distance(4, 5, points, orientation);
-        // prolonged_segment_distance(6, 0, points, orientation);
-        // prolonged_segment_distance(0, 3, points, orientation);
-        // prolonged_segment_distance(1, 3, points, orientation);
-        // prolonged_segment_distance(1, 4, points, orientation);
-        // prolonged_segment_distance(4, 6, points, orientation);
-        // prolonged_segment_distance(0, 6, points, orientation);
-        
         for (int i = 0; i < points.size(); ++i)
         {
             for (int j = i + 1; j < points.size(); ++j)
@@ -244,110 +238,7 @@ int main()
             }
         }        
 
-        // cout << longest_distance << endl;
-
-        printf("\n");
-
-        // for (int i = 0; i < points.size(); ++i)
-        // {
-        //     for (int j = i + 1; j < points.size(); ++j)
-        //     {
-        //         segments.push_back({
-        //             points[i],
-        //             points[j],
-        //             i,
-        //             j,
-        //             distance(points[i], points[j])
-        //         });
-        //         // printf("%d %d\n", i, j);
-        //     }
-        // }
-        // sort(segments.begin(), segments.end(), segment_compare);
-
-        // int i = 0;
-        // finded = false;
-        // while (!finded && i < segments.size())
-        // {
-        //     finded = is_segment_inside(segments[i], points);
-        //     i++;
-        // }
-        // std::cout.precision(9);
-        // std::cout.setf( std::ios::fixed, std:: ios::floatfield );
-        // cout << segments[i - 1].distance << endl;
-
-
-
-        // printf("%d\n", segments.size() );
-        // for (int i = 0; i < segments.size(); ++i)
-        // {
-        //     // cout << segments[i].p1.y << " " << endl;
-        //     // printf("%d %d %d %d %d\n", segments[i].p1.x, segments[i].p1.y, segments[i].p2.x, segments[i].p2.y, is_segment_inside(segments[i], points));
-        //     printf("%d %d %d %d %d\n", segments[i].p1.x, segments[i].p1.y, segments[i].p2.x, segments[i].p2.y, is_segment_inside(segments[i], points));
-        // }
+        cout << longest_distance << endl;
     }
     return 0;
 }
-
-// typedef struct
-// {
-//   point p1, p2;
-//   int i1, i2;
-//   double alpha, beta;
-//   bool is_vertical;
-// } segment;
-
-// bool segment_compare (segment i,segment j) { return (i.distance > j.distance); }
-// bool is_segment_inside(const segment seg, std::vector<point> points){
-//     double alpha, beta, alpha1, beta1;
-//     double p1d1,p2d1, p2d2, p2d3;
-//     double dx1, dx2;
-//     int nb_points = points.size();
-//     point p1, p2, sp1, sp2;
-//     bool is_vertical1, is_vertical2, is_vertical3; 
-
-//     is_vertical1 = ((seg.p1.x - seg.p2.x) == 0);
-//     alpha = is_vertical1 ? 0 : (double)(seg.p1.y - seg.p2.y) / (seg.p1.x - seg.p2.x);
-//     beta = seg.p1.y - alpha * seg.p1.x;
-//     for (int i = 0; i < nb_points; ++i)
-//     {
-//         p1 = points[i];
-//         p2 = points[(i + 1) % nb_points];
-//         if(i != seg.i1 && ((i + 1) % nb_points) != seg.i2) {
-//             p1d1 = is_vertical1 ? p1.x - seg.p1.x : p1.y - (alpha * p1.x + beta);
-//             p2d1 = is_vertical1 ? p2.x - seg.p1.x : p2.y - (alpha * p2.x + beta);
-//             if(p1d1 * p2d1 < 0){
-//                 if (p2d1 < 0)
-//                     swap(p1, p2);
-
-//                 dx1 = p1.x - seg.p1.x;
-//                 dx2 = p1.x - seg.p2.x;
-//                 sp1 = abs(dx1) < abs(dx2) ? seg.p1 : seg.p2; 
-//                 sp2 = abs(dx1) < abs(dx2) ? seg.p2 : seg.p1; 
-
-//                 is_vertical2 = ((sp1.x - p1.x) == 0);
-//                 alpha1 = is_vertical2 ? p2.x - p1.x : (double)(sp1.y - p1.y) / (sp1.x - p1.x);
-//                 beta1 = p1.y - alpha1 * p1.x;
-//                 p2d2 = p2.y - (alpha1 * p2.x + beta1);
-
-//                 is_vertical3 = ((sp2.x - p1.x) == 0);
-//                 alpha1 = is_vertical3 ? p2.x - p1.x : (double)(sp2.y - p1.y) / (sp2.x - p1.x);
-//                 beta1 = p1.y - alpha1 * p1.x;
-//                 p2d3 = p2.y - (alpha1 * p2.x + beta1);
-        
-//                 if((dx1*dx2 > 0 && p2d2 < 0 && p2d3 > 0) || (dx1*dx2 < 0 && p2d2 > 0 && p2d3 > 0)){
-//                     return false;
-//                 }
-//             }
-//         }
-//     }
-//     if(seg.i1 + 1 != seg.i2){
-//         p1 = points[(seg.i1 + 1) % points.size()];
-//         p2 = points[(seg.i2 + 1) % points.size()];
-//         p1d1 = is_vertical1 ? p1.x - seg.p1.x : p1.y - (alpha * p1.x + beta);
-//         p2d1 = is_vertical1 ? p2.x - seg.p1.x : p2.y - (alpha * p2.x + beta);
-//         if(p1d1 * p2d1 > 0){
-//             return false;
-//         }
-//     }
-//     return true;
-// }
