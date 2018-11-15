@@ -89,20 +89,16 @@ std::vector<int> find_polygon_orientation(const std::vector<point> points){
 
 // can be removed by grouping the if/else structure inside prolonged_segment_distance()
 void update_inf_or_supp_point(const point cp, const point p1, const point p2, const bool is_vertical, point &p_inf, point &p_sup){
-    // printf("modified ");
     if ((!is_vertical && cp.x >= p2.x && cp.x < p_sup.x) ||
         (is_vertical && cp.y >= p2.y && cp.y < p_sup.y)){
-        // printf("p_sup ");
         p_sup = cp;
     }
     else if ((!is_vertical && cp.x > p_inf.x && cp.x <= p1.x) ||
         (is_vertical && cp.y > p_inf.y && cp.y <= p1.y)){
-        // printf("p_inf");
         p_inf = cp;
     }
 }
 double prolonged_segment_distance(const int i1, const int i2, const std::vector<point> points, const std::vector<int> &orientations) {
-    // printf("%d %d: \n", i1, i2);
     point p1 = points[i1], p2 = points[i2], p_inf, p_sup;
 
     // get alpha & beta of the current line
@@ -116,7 +112,6 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
     
     // if the segment is outside 
     if ((abs(i1 - i2) + 1 != points.size()) && ((angle(points[i1 == 0 ? points.size() - 1 : i1-1] - p1, p2 - p1) - angle(points[i1 == 0 ? points.size() - 1 : i1-1] - p1, points[(i1 + 1) % points.size()] - p1)) < 0)){
-        // printf("- outside ");
         return 0;
     }
 
@@ -126,7 +121,6 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
     double alpha_c, beta_c, theta, theta_c, x, y;
     bool is_vertical_c;
 
-    // printf(" %d %d\n", i1, i2);
     if ((!is_vertical && p2.x < p1.x) || (is_vertical && p2.y < p1.y))
         swap(p1, p2);
     for (int i = 0; i < points.size(); ++i)
@@ -154,58 +148,39 @@ double prolonged_segment_distance(const int i1, const int i2, const std::vector<
             y = (alpha_c * beta - alpha * beta_c) / (alpha_c - alpha);
         }
 
-        // printf("- %d %d : ", i, i+1);
         if (!isnan(x)){
             theta = is_vertical ? (y - p1.y) / (p2.y - p1.y) : (x - p1.x) / (p2.x - p1.x);
             theta_c = is_vertical_c ? (y - cp1.y) / (cp2.y - cp1.y)  : (x - cp1.x) / (cp2.x - cp1.x);
 
-            // limit cases
-            if (almost_equal(theta_c, 1, 2) || almost_equal(theta_c, 0, 2)){
-                int k = (almost_equal(x, cp1.x, 2) && almost_equal(y, cp1.y, 2)) ? i : (i + 1) % points.size(),
-                    bk = k == 0 ? points.size() - 1 : k - 1, ak = (k + 1) % points.size();
-                point bp = points[bk], ap = points[ak];
+            int k = (almost_equal(x, cp1.x, 2) && almost_equal(y, cp1.y, 2)) ? i : (i + 1) % points.size(),
+                bk = k == 0 ? points.size() - 1 : k - 1, ak = (k + 1) % points.size();
+            point bp = points[bk], ap = points[ak];
+            double bpd = is_vertical ? bp.x - p1.x : bp.y - (alpha * bp.x + beta),
+                apd = is_vertical ? ap.x - p1.x : ap.y - (alpha * ap.x + beta);
+            bool orientation = almost_equal(bpd, 0, 2) ? 
+                        orientations[bk] * apd > 0: 
+                        orientations[k] * bpd > 0;    
+            // bool orientation = angle(bp - points[k], {1, alpha}) + angle(bp - points[k], {-1, -alpha}) - angle(bp - points[k], ap - points[k]) < 0;
 
-                double bpd = is_vertical ? bp.x - p1.x : bp.y - (alpha * bp.x + beta);
-                double apd = is_vertical ? ap.x - p1.x : ap.y - (alpha * ap.x + beta);
-                if (bpd * apd < 0){
-                    // printf("limit 2 sided ");
-                    if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
+            bool is_limit_case = almost_equal(theta_c, 1, 2) || almost_equal(theta_c, 0, 2),
+                is_normal_case = theta_c > 0 && theta_c < 1,
+                is_in_segment = theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2),
+                is_limit_colinear = (almost_equal(bpd, 0, 2) || almost_equal(apd, 0, 2)) && orientation,
+                is_2_sided = bpd * apd < 0;
+                
+            // limit cases
+            if ( is_normal_case || (is_limit_case && (is_limit_colinear || is_2_sided) )){
+                if (is_limit_colinear) {
+                    if(is_in_segment)
                         update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
                     else 
                         return 0;
                 }
-                else if (bpd * apd > 0){
-                    // printf("limit 1 sided ");
-                }
-                else if (almost_equal(bpd * apd, 0, 2)) {
-                    // printf("limit colinear ");
-                    double orientation = almost_equal(bpd, 0, 2) ? 
-                        orientations[bk] * apd: 
-                        orientations[k] * bpd;
-                    if (orientation > 0) {
-                        if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
-                            update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
-                        else 
-                            return 0;
-                    }
-                }
             }
-            // normal cases
-            else if (theta_c > 0 && theta_c < 1) {
-                // printf("normal ");
-                if(theta < 0 || theta > 1 || almost_equal(theta, 0, 2) || almost_equal(theta, 1, 2)) 
-                    update_inf_or_supp_point({x, y}, p1, p2, is_vertical, p_inf, p_sup);
-                else 
-                    return 0;
-            }
-            // else printf("no intersection ");
         }
-        // printf("\n");
     }
     if (isinf(p_inf.x)) p_inf = p1;
     if (isinf(p_sup.x)) p_sup = p2;
-    // printf("min x: %f min y: %f max x: %f max y; %f\n", p_inf.x, p_inf.y, p_sup.x, p_sup.y);
-    // printf("%f\n", distance(p_inf, p_sup));
     return distance(p_inf, p_sup);
 }
 int main()
