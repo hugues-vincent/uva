@@ -8,11 +8,8 @@ using namespace std;
 
 bool almost_equal(double x, double y, int ulp)
 {
-    // the machine epsilon has to be scaled to the magnitude of the values used
-    // and multiplied by the desired precision in ULPs (units in the last place)
     return std::abs(x-y) <= std::numeric_limits<double>::epsilon() * std::abs(x+y) * ulp
-    // unless the result is subnormal
-           || std::abs(x-y) < std::numeric_limits<double>::min();
+       || std::abs(x-y) < std::numeric_limits<double>::min();
 }
 
 typedef struct
@@ -33,8 +30,7 @@ double max(const double a, const double b) { return a > b ? a : b; }
 double min(const double a, const double b) { return a < b ? a : b; }
 void swap(point &p1, point &p2) { point tmp = p1; p1 = p2; p2 = tmp; }
 
-// can be improved from O(n^2) into O(n), by propagate the orientation of the first 
-// segment to the n-1 remaining segment
+// can be removed by using angle in the limit colinear case inside prolonged_segment_distance()
 std::vector<int> find_polygon_orientation(const std::vector<point> points){
     std::vector<int> orientation;
     point p1, p2, p_mid, cp1, cp2;
@@ -91,6 +87,7 @@ std::vector<int> find_polygon_orientation(const std::vector<point> points){
     return orientation;
 }
 
+// can be removed by grouping the if/else structure inside prolonged_segment_distance()
 void update_inf_or_supp_point(const point cp, const point p1, const point p2, const bool is_vertical, point &p_inf, point &p_sup){
     // printf("modified ");
     if ((!is_vertical && cp.x >= p2.x && cp.x < p_sup.x) ||
