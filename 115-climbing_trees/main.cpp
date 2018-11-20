@@ -11,9 +11,6 @@ typedef struct {
     int depth;
 } node;
 
-void find_relationship(char child[31], char parent[31], unordered_map<string, node> tree){
-    printf("%s %s\n", child, parent);
-}
 int min(int a, int b) {
     return  a < b ? a : b;
 }
@@ -22,6 +19,8 @@ int main() {
     unordered_map<string, node> tree;
     unordered_set<string> roots;
     queue<node> bfs;
+
+    // build the tree from a.in
     while( scanf("%31s %31s", child, parent) != EOF && (string)child != "no.child" && (string)parent != "no.parent"){ 
         auto child_node = tree.find(child);
         auto parent_node = tree.find(parent);
@@ -40,6 +39,8 @@ int main() {
             tree[parent].childs.push_back(child);
         }
     }
+    
+    // assign a depth to each node
     for(auto root : roots){ 
         tree[root].depth = 0;
         bfs.push(tree[root]);
@@ -52,6 +53,8 @@ int main() {
             bfs.push(tree[child]);
         }
     }
+    
+    // print answer to request in a.in 
     while( scanf("%31s %31s", child, parent) != EOF){
         auto lnode = tree.find(child), rnode = tree.find(parent), lnode_tmp = lnode, rnode_tmp = rnode;
         if (lnode == tree.end() || rnode == tree.end()){
