@@ -1,7 +1,8 @@
-# Link to problems
+# UVa Online judge
+## Link to  problems
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 
-# uva
+## Done so far 
 | pb id |         name         | solved |     pb type     |           strategy          |
 |-------|----------------------|--------|-----------------|-----------------------------|
 |   100 | 3n+1 pb              | 1      | Complete Search |                             |
@@ -13,3 +14,4 @@ https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 |  1099 | Sharing Chocolate    | 0      |                 |                             |
 |  1749 | Airport Construction | almost | Complete Search |                             |
 |   725 | Division             | 1      | Complete Search |                             |
+|   441 | Lotto                | 1      | Complete Search |                             |
