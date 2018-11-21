@@ -1,9 +1,7 @@
-# UVa Online judge
-
-## Link to  problems
+# Link to UVa problems 
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 
-## Done so far 
+# Problems started/completed so far 
 | pb id |         name         | solved |     pb type     |           strategy          |
 |-------|----------------------|--------|-----------------|-----------------------------|
 |   100 | 3n+1 pb              | 1      | Complete Search |                             |
