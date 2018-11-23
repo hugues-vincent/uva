@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 
 # Problems started/completed so far
-Solved Count: 9
+Solved Count: 10
 
 | pb id |           name          | solved |     pb type     |                                   current strategy                                   |
 |-------|-------------------------|--------|-----------------|--------------------------------------------------------------------------------------|
@@ -20,3 +20,4 @@ Solved Count: 9
 | 11565 | Simple Equation         | 1      | Complete Search | pruning properties from equation                                                     |
 | 11571 | Simple Equation Extreme | 0      | Complete Search | find X by solving a cubic eq && for x in X and solve 2nd quadratic eq depending on x |
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                          |
+| 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                                     |
