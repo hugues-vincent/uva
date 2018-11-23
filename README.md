@@ -1,7 +1,9 @@
 # Link to UVa problems 
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 
-# Problems started/completed so far 
+# Problems started/completed so far
+Solved Count: 9
+
 | pb id |           name          | solved |     pb type     |                                   current strategy                                   |
 |-------|-------------------------|--------|-----------------|--------------------------------------------------------------------------------------|
 |   100 | 3n+1 pb                 | 1      | Complete Search |                                                                                      |
@@ -18,5 +20,3 @@ https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 | 11565 | Simple Equation         | 1      | Complete Search | pruning properties from equation                                                     |
 | 11571 | Simple Equation Extreme | 0      | Complete Search | find X by solving a cubic eq && for x in X and solve 2nd quadratic eq depending on x |
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                          |
-|-------|-------------------------|--------|-----------------|--------------------------------------------------------------------------------------|
-|       | Solved Count            | 9      |                 |                                                                                      |
