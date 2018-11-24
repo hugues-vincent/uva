@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8
 
 # Problems started/completed so far
-Solved Count: 10
+Solved Count: 11
 
 | pb id |           name          | solved |     pb type     |                                   current strategy                                   |
 |-------|-------------------------|--------|-----------------|--------------------------------------------------------------------------------------|
@@ -17,7 +17,8 @@ Solved Count: 10
 |   725 | Division                | 1      | Complete Search | reducing the state space search thanks to mathematical constraint of the problem     |
 |  1099 | Sharing Chocolate       | 0      |                 |                                                                                      |
 |  1749 | Airport Construction    | almost | Complete Search | prolong every segment (pi, pj)                                                       |
+| 10976 | Fraction Again !        | 1      | Complete Search | use symetry of the equation and run through [k, 2*k]                                 |
 | 11565 | Simple Equation         | 1      | Complete Search | pruning properties from equation                                                     |
 | 11571 | Simple Equation Extreme | 0      | Complete Search | find X by solving a cubic eq && for x in X and solve 2nd quadratic eq depending on x |
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                          |
-| 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                                     |
+| 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                            |
