@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 16
+Solved Count: 17
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -14,6 +14,7 @@ Solved Count: 16
 |   169 | Xenosemantics           | 0      |                 |                                                                                               |
 |   177 | paper folding           | 1      | Ad hoc          |                                                                                               |
 |   441 | Lotto                   | 1      | Complete Search | brute force                                                                                   |
+|   674 | Coin Change             | 1      | DP              | R(n, m) where n := remaining money ; m := coin type                                                                                              |
 |   725 | Division                | 1      | Complete Search | reducing the state space search with math constraint && use bitmask to check digit used       |
 |   750 | 8_Queen_Chess_Problem   | 1      | BackTracking    | run through the 8! possiblities of queens positioning, prune if the diagonal is already taken |
 |  1099 | Sharing Chocolate       | 0      |                 |                                                                                               |
@@ -23,9 +24,8 @@ Solved Count: 16
 | 11195 | n-Queen_problem         | 1      | BackTracking    | like 750 unless it uses bitmasks to keep track of avaible rows, left diag and right diag      |
 | 11565 | Simple Equation         | 1      | Complete Search | pruning properties from equation                                                              |
 | 11571 | Simple Equation Extreme | 0      | Complete Search | find X by solving a cubic eq && for x in X and solve 2nd quadratic eq depending on x          |
-| 11701 | Cantor                  | 1      | D&C             | Ternary search                                                                                 |
+| 11701 | Cantor                  | 1      | D&C             | Ternary search                                                                                |
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                                   |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                     |
-|       |                         |        |                 |                                                                                               |
     
