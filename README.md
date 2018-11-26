@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 17
+Solved Count: 18
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -11,10 +11,11 @@ Solved Count: 17
 |   102 | Bin packing             | 1      | Ad hoc          | start from total sum                                                                          |
 |   108 | max sum                 | 1      | Complete Search | col cum sum & Kadane's algo                                                                   |
 |   115 | climbing trees          | 1      | Ad hoc          | compute depth of nodes                                                                        |
+|   147 | Dollars                 | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   169 | Xenosemantics           | 0      |                 |                                                                                               |
 |   177 | paper folding           | 1      | Ad hoc          |                                                                                               |
 |   441 | Lotto                   | 1      | Complete Search | brute force                                                                                   |
-|   674 | Coin Change             | 1      | DP              | R(n, m) where n := remaining money ; m := coin type                                                                                              |
+|   674 | Coin Change             | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   725 | Division                | 1      | Complete Search | reducing the state space search with math constraint && use bitmask to check digit used       |
 |   750 | 8_Queen_Chess_Problem   | 1      | BackTracking    | run through the 8! possiblities of queens positioning, prune if the diagonal is already taken |
 |  1099 | Sharing Chocolate       | 0      |                 |                                                                                               |
@@ -28,4 +29,4 @@ Solved Count: 17
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                                   |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                     |
-    
+        
