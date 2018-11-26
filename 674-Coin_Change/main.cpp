@@ -2,6 +2,7 @@
 
 using namespace std;
 int money, S[] = {25, 50, 10, 1, 5};
+// Complete Search: iterative
 // Time limit exceeded
 void iterative() {
     int cpt = 0, remaining = money;
@@ -24,6 +25,7 @@ void iterative() {
     printf("%d\n", cpt);
 }
 
+// Complete Search
 // time limit exceeded
 int recursive(int N, int m) {
     if (N < 0 || m < 0) return 0;
@@ -31,6 +33,7 @@ int recursive(int N, int m) {
     return recursive(N - S[m], m) + recursive(N, m -1);
 }
 
+// Dynamic programming
 // accepted: rank 11756
 int dp(int n, int m) {
     int table[n+1][m];

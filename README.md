@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 18
+Solved Count: 19
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -20,6 +20,7 @@ Solved Count: 18
 |   750 | 8_Queen_Chess_Problem   | 1      | BackTracking    | run through the 8! possiblities of queens positioning, prune if the diagonal is already taken |
 |  1099 | Sharing Chocolate       | 0      |                 |                                                                                               |
 |  1749 | Airport Construction    | almost | Complete Search | prolong every segment (pi, pj)                                                                |
+| 10341 | Solve It                | 1      | D&C             | f is decreasing on [0, 1] ; Bisection or Newton Method                                        |
 | 10360 | Rat Attack              | 1      | Complete Search | Backwards strategy: for each group of rats compute all square (i, j, d) that can touches it   |
 | 10976 | Fraction Again !        | 1      | Complete Search | use symetry of the equation and run through [k, 2*k]                                          |
 | 11195 | n-Queen_problem         | 1      | BackTracking    | like 750 unless it uses bitmasks to keep track of avaible rows, left diag and right diag      |
@@ -29,4 +30,5 @@ Solved Count: 18
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                                   |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                     |
+|       |                         |        |                 |                                                                                               |
         
