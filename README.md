@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 19
+Solved Count: 20
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -30,5 +30,5 @@ Solved Count: 19
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                                   |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                     |
-|       |                         |        |                 |                                                                                               |
+|   624 | CD                      | 1      | BackTracking    | recursive binary tree && return 2 var (sum, mask)                                                           |
         
