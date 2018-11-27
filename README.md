@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 20
+Solved Count: 21
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -14,7 +14,9 @@ Solved Count: 20
 |   147 | Dollars                 | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   169 | Xenosemantics           | 0      |                 |                                                                                               |
 |   177 | paper folding           | 1      | Ad hoc          |                                                                                               |
+|   410 | Station Balance         | 1      | Greedy          | Add (2*C - S) zeros, sort the array, add to chamber i (S[i], S[2*C - 1 - i])                                                                                                |
 |   441 | Lotto                   | 1      | Complete Search | brute force                                                                                   |
+|   624 | CD                      | 1      | BackTracking    | recursive binary tree && return 2 var (sum, mask)                                             |
 |   674 | Coin Change             | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   725 | Division                | 1      | Complete Search | reducing the state space search with math constraint && use bitmask to check digit used       |
 |   750 | 8_Queen_Chess_Problem   | 1      | BackTracking    | run through the 8! possiblities of queens positioning, prune if the diagonal is already taken |
@@ -30,5 +32,4 @@ Solved Count: 20
 | 11742 | Social Constraints      | 1      | Complete Search | brute force                                                                                   |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 12455 | Bars                    | 1      | Complete Search | backtracking with bitmask                                                                     |
-|   624 | CD                      | 1      | BackTracking    | recursive binary tree && return 2 var (sum, mask)                                                           |
         
