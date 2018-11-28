@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 25
+Solved Count: 27
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -17,6 +17,7 @@ Solved Count: 25
 | 10114 | Loansome car buyer      | 1      | Ad hoc          |                                                                                               |
 | 11172 | Relational Operators    | 1      | Ad hoc          |                                                                                               |
 | 11498 | Division of Nlogonia    | 1      | Ad hoc          |                                                                                               |
+| 11559 | Event planning          | 1      | Ad hoc          |                                                                                               |
 | 11727 | Cost cutting            | 1      | Ad hoc          |                                                                                               |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 |   100 | 3n+1 pb                 | 1      | Complete Search |                                                                                               |
