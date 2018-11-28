@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 28
+Solved Count: 29
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
