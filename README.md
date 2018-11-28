@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 30
+Solved Count: 31
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -23,6 +23,7 @@ Solved Count: 30
 | 11559 | Event planning          | 1      | Ad hoc          |                                                                                               |
 | 11727 | Cost cutting            | 1      | Ad hoc          |                                                                                               |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
+| 11947 | Cancer or Scorpio       | 1      | Ad hoc          |                                                                                               |
 |   100 | 3n+1 pb                 | 1      | Complete Search |                                                                                               |
 |   108 | max sum                 | 1      | Complete Search | col cum sum & Kadane's algo                                                                   |
 |   441 | Lotto                   | 1      | Complete Search | brute force                                                                                   |
