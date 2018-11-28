@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 23
+Solved Count: 24
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -28,6 +28,7 @@ Solved Count: 23
 | 10976 | Fraction Again !        | 1      | Complete Search | use symetry of the equation and run through [k, 2*k]                                          |
 | 11172 | Relational Operators    | 1      | Ad hoc          |                                                                                               |
 | 11195 | n-Queen_problem         | 1      | BackTracking    | like 750 unless it uses bitmasks to keep track of avaible rows, left diag and right diag      |
+| 11498 | Division of Nlogonia    | 1      | As hoc          |                                                                                               |
 | 11565 | Simple Equation         | 1      | Complete Search | pruning properties from equation                                                              |
 | 11571 | Simple Equation Extreme | 0      | Complete Search | find X by solving a cubic eq && for x in X and solve 2nd quadratic eq depending on x          |
 | 11701 | Cantor                  | 1      | D&C             | Ternary search                                                                                |
