@@ -3,57 +3,54 @@
 #include <algorithm>
 #include <utility>
 
+#define EPS 1e-7
 using namespace std;
 typedef pair<double, double> p2f;
 
-bool union_(const p2f a, const p2f b, p2f &i) {
-    // printf("%d ", (a.second - b.first < 0) ? 1: 0);
-    if (a.second - b.first < 0 || b.second - a.first < 0 ) {return false;}
-    i = { a.first <= b.first ? a.first : b.first, 
-        a.second  <= b.second ? b.second : a.second };
-    return true;
-}
-bool contains(const p2f a, p2f b){
-    return b.first <= a.first && b.second >= a.second;
-} 
 int main() {
     int n, l, w, p, d, cpt;
-    p2f sprinklers[10000], I, Ic, curr, next;
-    bool is_uninterrupted;
-    double w2;
+    vector<p2f> sprinklers;
+    double covered;
 
-    int N = 0;
     while(scanf("%d %d %d", &n, &l, &w) != EOF ) {
-        w2 = (double)w*(double)w/4.;
-        int i = 0, j = 0;
-        while(i < n)
+        sprinklers.clear();
+        // transform the circle into segment
+        // in oder to end up with an interval covering problem
+        // remove circles that are strictly contained in the strip of grass  
+        for (int i = 0; i < n; ++i)
         {
             if(scanf("%d %d", &p, &d)){}
-            i++;
             if (2.0 * d < w) continue;
-            double r = sqrt((double)d*d - w2);
-            sprinklers[j] = {p - r < 0 ? 0 : p - r, p + r > l ? l : p + r};
-            j++;
-        }
-        sort(sprinklers, sprinklers + j, [](p2f a, p2f b) { return a.second > b.second; });
-        stable_sort(sprinklers, sprinklers + j, [](p2f a, p2f b) { return a.first < b.first; });
-
-        cpt = 0;
-        is_uninterrupted = true;
-        I = {0, 0};
-        for (int k = 0; k < j && is_uninterrupted; ++k)
-        {
-            curr = sprinklers[k];
-            if (k < j -1){
-                next = sprinklers[k+1];
-                if (union_(I, next, Ic) && contains(curr, Ic)) continue;
+            double r = sqrt((double)d*d - (double)w*w/4.);
+            if(p - r <= l && p + r >= 0) {
+                sprinklers.push_back({p - r, p + r});
             }
-            is_uninterrupted = union_(I, curr, I);
-            cpt++;
-            if(I.second >= l) break;
         }
-        if (I.second < l || !is_uninterrupted) printf("%d\n", -1);
-        else printf("%d\n", cpt);    
+        sort(sprinklers.begin(), sprinklers.end());
+        // for each interval [x, y], compare [x, y] with [0, covered] ; their are 4 cases:
+        // 1 - covered < x => interupted  <=> return -1
+        // 2 - y < covered => [0, covered] contains [x, y], thus we must not count it <=> continue
+        // 3 - their is [a, b] such that a < covered, b > covered, y < b => jump to [a, b] 
+        //          without counting [x, y]
+        // 4 - count [x, y]
+        // if covered >= l => break the loop
+        cpt = 0;
+        covered = 0;
+        for (int i = 0; i < sprinklers.size(); ++i)
+        {
+            if (covered + EPS >= l) break;
+            if (covered >= sprinklers[i].second + EPS) continue;
+            if (covered < sprinklers[i].first - EPS) {cpt = -1; break;}
+            int j = i , u = i;
+            while (j < sprinklers.size() && sprinklers[j].first - EPS <= covered) {
+                if(sprinklers[j].second > sprinklers[u].second) u = j;
+                j++;
+            }
+            covered = sprinklers[u].second;
+            i = u;
+            cpt++;
+        }
+        printf("%d\n", covered + EPS >= l ? cpt : -1);
     }
     return 0;
 }
