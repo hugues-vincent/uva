@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 31
+Solved Count: 32
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -22,6 +22,7 @@ Solved Count: 31
 | 11498 | Division of Nlogonia    | 1      | Ad hoc          |                                                                                               |
 | 11559 | Event planning          | 1      | Ad hoc          |                                                                                               |
 | 11727 | Cost cutting            | 1      | Ad hoc          |                                                                                               |
+| 11799 | Horror Dash             | 1      | Ad hoc          |                                                                                               |
 | 11935 | Through the dessert     | 1      | Ad hoc          |                                                                                               |
 | 11947 | Cancer or Scorpio       | 1      | Ad hoc          |                                                                                               |
 |   100 | 3n+1 pb                 | 1      | Complete Search |                                                                                               |
