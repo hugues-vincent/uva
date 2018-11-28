@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 27
+Solved Count: 28
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -14,6 +14,7 @@ Solved Count: 27
 |   102 | Bin packing             | 1      | Ad hoc          | start from total sum                                                                          |
 |   115 | climbing trees          | 1      | Ad hoc          | compute depth of nodes                                                                        |
 |   177 | paper folding           | 1      | Ad hoc          |                                                                                               |
+|   893 | Y3K problem             | 1      | Ad hoc          |                                                                                               |
 | 10114 | Loansome car buyer      | 1      | Ad hoc          |                                                                                               |
 | 11172 | Relational Operators    | 1      | Ad hoc          |                                                                                               |
 | 11498 | Division of Nlogonia    | 1      | Ad hoc          |                                                                                               |
