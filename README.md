@@ -14,6 +14,7 @@ Solved Count: 28
 |   102 | Bin packing             | 1      | Ad hoc          | start from total sum                                                                          |
 |   115 | climbing trees          | 1      | Ad hoc          | compute depth of nodes                                                                        |
 |   177 | paper folding           | 1      | Ad hoc          |                                                                                               |
+|   556 | Amazing                 | 1      | Ad hoc          |                                                                                               |
 |   893 | Y3K problem             | 1      | Ad hoc          |                                                                                               |
 | 10114 | Loansome car buyer      | 1      | Ad hoc          |                                                                                               |
 | 11172 | Relational Operators    | 1      | Ad hoc          |                                                                                               |
