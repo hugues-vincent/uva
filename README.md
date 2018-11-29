@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 34
+Solved Count: 35
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -27,6 +27,7 @@ Solved Count: 34
 | 11947 | Cancer or Scorpio       | 1      | Ad hoc          |                                                                                               |
 |   100 | 3n+1 pb                 | 1      | Complete Search |                                                                                               |
 |   108 | max sum                 | 1      | Complete Search | col cum sum & Kadane's algo                                                                   |
+|   543 | Goldbach's conjecture   | 1      | Complete Search | Compute sieve and test for a in [a, c/2] if (a, c -a) are prime numbers                       |
 |   441 | Lotto                   | 1      | Complete Search | brute force                                                                                   |
 |   725 | Division                | 1      | Complete Search | reducing the state space search with math constraint && use bitmask to check digit used       |
 | 10360 | Rat Attack              | 1      | Complete Search | Backwards strategy: for each group of rats compute all square (i, j, d) that can touches it   |
@@ -43,6 +44,7 @@ Solved Count: 34
 | 11701 | Cantor                  | 1      | D&C             | Ternary search                                                                                |
 |   147 | Dollars                 | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   674 | Coin Change             | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
-| 11703 | sqrt log sin            | 1      | DP              | Top-Down R(n) where n: index of the series                                                     |
-| 11450 | Wedding Shopping        | 1      | DP              | R(c, m) where c: garment id ; m := money                                                                                            |
+| 11703 | sqrt log sin            | 1      | DP              | Top-Down R(n) where n: index of the series                                                    |
+| 11450 | Wedding Shopping        | 1      | DP              | R(c, m) where c: garment id ; m := money                                                      |
+|       |                         |        |                 |                                                                                               |
         
