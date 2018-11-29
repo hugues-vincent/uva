@@ -2,7 +2,7 @@
 https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=0
 
 # Problems started/completed so far
-Solved Count: 33
+Solved Count: 34
 
 | pb id |           name          | solved |     pb type     |                                        current strategy                                       |
 |-------|-------------------------|--------|-----------------|-----------------------------------------------------------------------------------------------|
@@ -43,6 +43,6 @@ Solved Count: 33
 | 11701 | Cantor                  | 1      | D&C             | Ternary search                                                                                |
 |   147 | Dollars                 | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
 |   674 | Coin Change             | 1      | DP              | Top-Down approach R(n, m) where n := remaining money ; m := coin type                         |
-| 11703 | sqrt log sin            | 1      | DP              | Top-Down R(n) where n: idex of the series                                                                                      |
-|       |                         |        |                 |                                                                                               |
+| 11703 | sqrt log sin            | 1      | DP              | Top-Down R(n) where n: index of the series                                                     |
+| 11450 | Wedding Shopping        | 1      | DP              | R(c, m) where c: garment id ; m := money                                                                                            |
         
